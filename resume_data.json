@@ -1,0 +1,98 @@
+{
+    "name": "Mukilan S",
+    "location": "Chennai",
+    "email": "hi.mukilan@gmail.com",
+    "phone": "6379654891",
+    "linkedin": "linkedin.com/in/mukilan127",
+    "prompt": "A generative AI and ML enthusiast with experience in scalable AI solutions, LLMs (GPT, Claude), APIs, vector databases (Pinecone), Python, TensorFlow, and AWS. I've developed real-time AI applications including chatbots and diagnostic systems. I'm a multiple-time hackathon winner with a strong track record of delivery.",
+    "education": {
+      "degree": "B.Tech in AI and Data Science",
+      "university": "Knowledge Institute of Technology",
+      "year": "2021-2025",
+      "cgpa": "8.085/10"
+    },
+    "experience": [
+      {
+        "role": "AI Developer",
+        "company": "InterviewDesk Pvt Ltd",
+        "duration": "Jul 2024 - Present",
+        "details": "Built AI chatbot on AWS; reduced latency by 40%, workload by 30%"
+      },
+      {
+        "role": "Computer Vision Engineer",
+        "company": "iNeuron Intelligence Pvt Ltd",
+        "duration": "Mar 2024 - Apr 2024",
+        "details": "Developed AI system for X-ray analysis; boosted uptime 30%"
+      },
+      {
+        "role": "Computer Vision Developer",
+        "company": "REVEILLE Pvt Ltd",
+        "duration": "Jun 2023 - Jul 2023",
+        "details": "Created real-time UI anomaly detection with YOLOv5"
+      }
+    ],
+    "projects": [
+      {
+        "title": "AICE RAISE Hackathon Winner",
+        "description": "Developed a solution that improved medical plane route efficiency by 30% using machine learning and optimization techniques"
+      },
+      {
+        "title": "ATTAL Hackathon Winner",
+        "description": "Created a system that boosted interview efficiency by 25% using NLP, AWS Lambda, and S3"
+      },
+      {
+        "title": "I-Start Hackathon Finalist",
+        "description": "Built an AI fire detection system using YOLOv8 that improved safety by 30% with mobile alerts"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Programming & Frameworks",
+        "technologies": "Python, Flask, TensorFlow, OpenCV, LangChain, Scikit-learn, Pandas, NumPy"
+      },
+      {
+        "category": "LLMs",
+        "technologies": "OpenAI GPT, Mistral, LLaMA 2; fine-tuning & prompt engineering"
+      },
+      {
+        "category": "Deployment",
+        "technologies": "AWS (EC2, Lambda, S3), HuggingFace Spaces, Google Colab"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Supervised ML",
+        "platform": "Stanford & DeepLearning.AI (Coursera)",
+        "date": "Jan 2025"
+      },
+      {
+        "title": "Data Visualization",
+        "platform": "Tata Insights Academy (Forage)",
+        "date": "Jan 2025"
+      },
+      {
+        "title": "Generative AI Simulation",
+        "platform": "BCX Technologies (Forage)",
+        "date": "Jan 2025"
+      }
+    ],
+    "awards": [
+      {
+        "title": "Association Secretary",
+        "year": "4 times",
+        "details": "Led 100+ students, coordinated workshops"
+      },
+      {
+        "title": "Co-Curricular Excellence Award",
+        "year": "2025"
+      },
+      {
+        "title": "Pinnacle Achiever Award",
+        "year": "2025"
+      },
+      {
+        "title": "ATTAL Incubation Award",
+        "year": "2025"
+      }
+    ]
+}
