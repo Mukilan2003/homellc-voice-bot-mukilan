@@ -4,7 +4,7 @@ elevenlabs==1.54.0
 deepgram-sdk==3.0.0
 python-dotenv==1.0.1
 numpy==1.26.4
-pyaudio==0.2.14
+# pyaudio==0.2.14
 requests==2.31.0
 assemblyai==0.17.0
 SpeechRecognition==3.10.0
