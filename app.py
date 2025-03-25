@@ -7,8 +7,6 @@ import requests
 from elevenlabs.client import ElevenLabs
 from elevenlabs import Voice, VoiceSettings
 from queue import Queue
-import pyaudio
-import wave
 from concurrent.futures import ThreadPoolExecutor
 from functools import lru_cache
 from deepgram import (
@@ -192,14 +190,8 @@ Instead, make definitive closing statements. Never ask the user for more informa
 
 Keep responses concise (under 150 words) but conversational, avoiding any formatting that would sound unnatural in speech.""")
 
-# Audio parameters
-FORMAT = pyaudio.paInt16
-CHANNELS = 1
-RATE = 16000
-CHUNK = 1024
-RECORD_SECONDS = 5
-SILENCE_THRESHOLD = 1000
-MAX_SILENCE_CHUNKS = int(RATE / CHUNK * 1.5)
+# Audio settings (no longer dependent on PyAudio)
+SAMPLE_RATE = 16000
 
 executor = ThreadPoolExecutor(max_workers=2)
 
@@ -376,92 +368,13 @@ def cached_text_to_speech(text):
     
     return audio_data
 
+# Legacy endpoint kept for compatibility, but now uses browser-based recording
 @app.route('/record', methods=['POST'])
 def record_audio():
-    try:
-        filename = "user_audio.wav"
-        record_audio_file(filename)
-        transcript = transcribe_audio(filename)
-        return jsonify({'transcript': transcript})
-    except Exception as e:
-        print(f"Error recording/transcribing audio: {str(e)}")
-        return jsonify({"error": "Failed to record/transcribe audio"}), 500
-
-def record_audio_file(filename):
-    audio = pyaudio.PyAudio()
-    stream = audio.open(
-        format=FORMAT,
-        channels=CHANNELS,
-        rate=RATE,
-        input=True,
-        frames_per_buffer=CHUNK
-    )
-    
-    print("Recording...")
-    frames = []
-    silence_chunks = 0
-    
-    try:
-        while True:
-            data = stream.read(CHUNK)
-            frames.append(data)
-            
-            audio_data = np.frombuffer(data, dtype=np.int16)
-            if np.abs(audio_data).mean() < SILENCE_THRESHOLD:
-                silence_chunks += 1
-            else:
-                silence_chunks = 0
-            
-            if silence_chunks > MAX_SILENCE_CHUNKS:
-                break
-    except KeyboardInterrupt:
-        pass
-    finally:
-        stream.stop_stream()
-        stream.close()
-        audio.terminate()
-    
-    with wave.open(filename, 'wb') as wf:
-        wf.setnchannels(CHANNELS)
-        wf.setsampwidth(audio.get_sample_size(FORMAT))
-        wf.setframerate(RATE)
-        wf.writeframes(b''.join(frames))
-
-def transcribe_audio(audio_file):
-    transcriber = aai.Transcriber()
-    config = aai.TranscriptionConfig(language_code="en_us", punctuate=True)
-    transcript = transcriber.transcribe(audio_file, config=config)
-    return transcript.text
-
-@app.route('/transcribe', methods=['POST'])
-async def transcribe_audio():
-    try:
-        audio_data = request.files['audio'].read()
-        
-        options = LiveOptions(
-            model="nova-2",
-            language="en-US",
-            smart_format=True,
-            encoding="linear16",
-            channels=1,
-            sample_rate=16000
-        )
-        
-        payload = {
-            "type": "audio",
-            "data": base64.b64encode(audio_data).decode('utf-8')
-        }
-        
-        response = await dg_client.transcription.live.v("1").transcribe_file(
-            payload,
-            options
-        )
-        
-        transcript = response.results.channels[0].alternatives[0].transcript
-        return jsonify({'transcript': transcript})
-    except Exception as e:
-        print(f"Error transcribing audio: {str(e)}")
-        return jsonify({"error": "Failed to transcribe audio"}), 500
+    return jsonify({
+        'transcript': "",
+        'message': "This feature has been replaced with browser-based recording for better compatibility. Please use the microphone button in the interface."
+    }), 200
 
 # AssemblyAI transcription endpoint
 @app.route('/transcribe_audio', methods=['POST'])
@@ -525,7 +438,4 @@ def transcribe_with_assemblyai():
         }), 500
 
 if __name__ == '__main__':
-    # Suppress ALSA/Jack warnings
-    os.environ['PYAUDIO_NO_WARN'] = '1'
-    os.system('jack_control stop >/dev/null 2>&1')
     app.run(debug=True, host='0.0.0.0', port=5000)
