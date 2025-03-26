@@ -175,49 +175,75 @@ This application uses several AI services that require API keys:
 
 • A personalized system prompt is dynamically created from Mukilan’s resume data, incorporating details such as education, experience, projects, and skills.
 
-## Explanation of Approach and Design Decisions
+## 📖 Explanation of Approach and Design Decisions
 
-*1. Vision and Objectives*
+### 1. Vision and Objectives
 
-• Personalization: The core idea is to build a chatbot that truly represents Mukilan’s voice and expertise. The system is designed not just to answer questions, but to do so in a manner that reflects his professional background and personal style.
+- **Personalization:**  
+  The core idea is to build a chatbot that truly represents Mukilan’s voice and expertise. The system is designed not just to answer questions but to do so in a manner that reflects his professional background and personal style.  
 
-• Seamless Interaction: We aimed for an experience where users can interact naturally—through text or voice—without facing technical barriers or delays.
+- **Seamless Interaction:**  
+  We aimed for an experience where users can interact naturally—through text or voice—without facing technical barriers or delays.  
 
-*2. Personalization through Data-Driven Design*
+---
 
-• Dynamic System Prompt: We generate a custom prompt by extracting key details (education, work experience, projects, and skills) from Mukilan’s(myself) resume data. This ensures every interaction is informed by his unique profile.
+### 2. Personalization through Data-Driven Design
 
-• Consistent Tone: By embedding guidelines (e.g., concise, friendly, yet professional) into the system prompt, the chatbot maintains a natural conversational flow, making it sound authentic and personalized.
+- **Dynamic System Prompt:**  
+  We generate a custom prompt by extracting key details (education, work experience, projects, and skills) from Mukilan’s (myself) resume data. This ensures every interaction is informed by his unique profile.  
 
-*3. Voice Capabilities Integration*
+- **Consistent Tone:**  
+  By embedding guidelines (e.g., concise, friendly, yet professional) into the system prompt, the chatbot maintains a natural conversational flow, making it sound authentic and personalized.  
 
-• Speech-to-Text (STT): AssemblyAI was chosen for its high accuracy in transcribing spoken language. This component ensures that voice input is reliably converted into text, making the conversation flow naturally.
+---
 
-• Text-to-Speech (TTS): The design leverages a primary free TTS service (StreamElements) to keep costs low and adds ElevenLabs as a fallback for higher-quality audio output. This dual-layer approach guarantees clear and engaging voice responses even if one service encounters issues.
+### 3. Voice Capabilities Integration
 
-*4. Robustness and Resilience*
+- **Speech-to-Text (STT):**  
+  AssemblyAI was chosen for its high accuracy in transcribing spoken language. This component ensures that voice input is reliably converted into text, making the conversation flow naturally.  
 
-• Fallback Strategies: Recognizing that external API services may sometimes be unreliable or subject to rate limits, we built fallback mechanisms across both voice and text functions. For example, if the primary TTS service fails, the system immediately switches to ElevenLabs without interrupting the user experience.
+- **Text-to-Speech (TTS):**  
+  The design leverages a primary free TTS service (StreamElements) to keep costs low and adds ElevenLabs as a fallback for higher-quality audio output. This dual-layer approach guarantees clear and engaging voice responses even if one service encounters issues.  
 
-• Caching Techniques: We implement caching (using Python’s lru_cache) for TTS outputs. This minimizes redundant API calls and reduces latency, ensuring the system remains responsive under heavy use.
+---
 
-*5. User Experience and Interface Design*
+### 4. Robustness and Resilience
 
-• Modern, Intuitive UI: The frontend is designed with simplicity and usability in mind. Interactive elements like a microphone button for voice input are clearly visible, and the layout is optimized for both desktop and mobile browsers.
+- **Fallback Strategies:**  
+  Recognizing that external API services may sometimes be unreliable or subject to rate limits, we built fallback mechanisms across both voice and text functions. For example, if the primary TTS service fails, the system immediately switches to ElevenLabs without interrupting the user experience.  
 
-• Natural Interaction Flow: The interface is built to support fluid, natural conversation. The avoidance of rigid or overly structured responses (such as numbered lists) ensures that the user feels like they’re interacting with a real person rather than a mechanical system.
+- **Caching Techniques:**  
+  We implement caching (using Python’s `lru_cache`) for TTS outputs. This minimizes redundant API calls and reduces latency, ensuring the system remains responsive under heavy use.  
 
-*6. Modular and Scalable Architecture*
+---
 
-• Separation of Concerns: By using Flask as the backend framework, we have isolated different functionalities—such as conversation handling, voice synthesis, and audio transcription—into separate components. This modularity makes the system easier to maintain, test, and scale in the future.
+### 5. User Experience and Interface Design
 
-• Ease of Updates: With clearly defined modules and configuration files (like api_key.json), updating or replacing individual components (for example, swapping in a new TTS provider) can be done with minimal disruption.
+- **Modern, Intuitive UI:**  
+  The frontend is designed with simplicity and usability in mind. Interactive elements like a microphone button for voice input are clearly visible, and the layout is optimized for both desktop and mobile browsers.  
 
+- **Natural Interaction Flow:**  
+  The interface is built to support fluid, natural conversation. The avoidance of rigid or overly structured responses (such as numbered lists) ensures that the user feels like they’re interacting with a real person rather than a mechanical system.  
 
-*7. Final Considerations*
+---
 
-• Real-World Readiness: The system is designed to handle real-world scenarios, including varying network conditions and potential API downtimes.
-• User-Centric Design: Every design decision—from voice integration to response formatting—has been made with the end user in mind. The result is an AI assistant that is not only technically robust but also engaging and true to Mukilan’s identity.
+### 6. Modular and Scalable Architecture
+
+- **Separation of Concerns:**  
+  By using Flask as the backend framework, we have isolated different functionalities—such as conversation handling, voice synthesis, and audio transcription—into separate components. This modularity makes the system easier to maintain, test, and scale in the future.  
+
+- **Ease of Updates:**  
+  With clearly defined modules and configuration files (like `api_key.json`), updating or replacing individual components (for example, swapping in a new TTS provider) can be done with minimal disruption.  
+
+---
+
+### 7. Final Considerations
+
+- **Real-World Readiness:**  
+  The system is designed to handle real-world scenarios, including varying network conditions and potential API downtimes.  
+
+- **User-Centric Design:**  
+  Every design decision—from voice integration to response formatting—has been made with the end user in mind. The result is an AI assistant that is not only technically robust but also engaging and true to Mukilan’s identity.  
 
 ## Author
 
