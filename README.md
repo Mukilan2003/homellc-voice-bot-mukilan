@@ -1,4 +1,6 @@
 ![Banner Image](banner.png)
+![Build Status](https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg)
+
 # Mukilan's AI Assistant
 
 A personalized AI chatbot that simulates conversations with Mukilan using natural language processing and voice capabilities. Talk to an AI version of Mukilan anytime, anywhere - no scheduling, no delays.
