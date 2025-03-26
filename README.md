@@ -3,15 +3,39 @@
 
 # Mukilan's AI Assistant
 
-A personalized AI chatbot that simulates conversations with Mukilan using natural language processing and voice capabilities. Talk to an AI version of Mukilan anytime, anywhere - no scheduling, no delays.
+A personalized AI chatbot that simulates conversations with Mukilan using natural language processing and voice capabilities. Talk to an AI version of Mukilan anytime, anywhere—no scheduling, no delays.
+
+## Live Demo
+
+<p align="center">
+  <a href="https://homellc-voice-bot-mukilan.onrender.com/" style="text-decoration: none;">
+    <button style="
+      background-color: #6a0dad;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+    ">
+      Try Live Demo
+    </button>
+  </a>
+</p>
+
+You can access the live demo of Mukilan's AI Assistant by clicking the button above or by visiting the following link: [https://homellc-voice-bot-mukilan.onrender.com/](https://homellc-voice-bot-mukilan.onrender.com/)
 
 ## Features
 
-- **Conversational AI**: Powered by Google's Gemini 2.0 Flash model for natural, context-aware responses
-- **Voice Interaction**: Both text-to-speech and speech-to-text capabilities for a hands-free experience
-- **Personalized Responses**: AI trained on Mukilan's background, experience, and communication style
-- **Modern UI**: Clean, responsive interface with attractive animations and visual feedback
-- **Offline Capability**: Fallback mechanisms when API services are unavailable
+- **Conversational AI:** Powered by Google's Gemini 2.0 Flash model for natural, context-aware responses
+- **Voice Interaction:** Both text-to-speech and speech-to-text capabilities for a hands-free experience
+- **Personalized Responses:** AI trained on Mukilan's background, experience, and communication style
+- **Modern UI:** Clean, responsive interface with attractive animations and visual feedback
+- **Offline Capability:** Fallback mechanisms when API services are unavailable
 
 ## Prerequisites
 
@@ -24,8 +48,8 @@ A personalized AI chatbot that simulates conversations with Mukilan using natura
 
 This application uses several AI services that require API keys:
 
-- **Google Gemini API**: For conversation generation
-- **AssemblyAI**: For speech recognition 
+- **Google Gemini API:** For conversation generation
+- **AssemblyAI:** For speech recognition
 - **ElevenLabs** (optional): For high-quality text-to-speech
 
 ## Installation
