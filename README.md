@@ -129,7 +129,31 @@ This application uses several AI services that require API keys:
 
 ## Summary of Findings
 
-1. System Architecture and Core Functionality
+*1. System Architecture and Core Functionality*
+
+• The backend is developed using Flask, providing API endpoints for chat, voice synthesis, and speech transcription.
+• The system leverages Google’s Gemini 2.0 Flash model for generating context-aware responses, ensuring natural and technical accuracy.
+• A personalized system prompt is dynamically created from Mukilan’s resume data, incorporating details such as education, experience, projects, and skills.
+
+2. Voice Capabilities and Integration
+• Text-to-Speech (TTS) is implemented primarily with the free StreamElements API, with ElevenLabs serving as a high-quality fallback.
+• Speech-to-Text (STT) functionality is provided by AssemblyAI, which converts spoken input into text for seamless interaction.
+• The design accommodates potential API limitations by incorporating multiple fallback mechanisms for both TTS and STT.
+
+3. Personalization and Response Style
+• A dynamic system prompt uses structured data from a JSON file to reflect Mukilan’s professional background and communication style.
+• The assistant’s response guidelines ensure concise, conversational, and professional outputs without overly technical or verbose language.
+• Instructions within the prompt enforce natural speech patterns by avoiding rigid lists and structured formatting that could disrupt the voice output.
+
+4. Robustness and Efficiency Measures
+• API keys are managed via a configuration file (api_key.json), with default placeholders prompting users to supply valid credentials.
+• The system employs caching (using lru_cache) for TTS results, minimizing redundant API calls and reducing response latency.
+• Fallback strategies ensure continuous operation even if primary services encounter issues, maintaining a reliable user experience.
+
+5. User Interface and Deployment Considerations
+• The frontend is built with modern web technologies (HTML, CSS, JavaScript), offering a responsive and intuitive user experience.
+• Interactive elements, such as the microphone button, allow users to engage via voice or text.
+• Detailed troubleshooting guidelines and prerequisites ensure smooth deployment and operation, even under offline or limited service conditions.
 • The backend is developed using Flask, providing API endpoints for chat, voice synthesis, and speech transcription.
 • The system leverages Google’s Gemini 2.0 Flash model for generating context-aware responses, ensuring natural and technical accuracy.
 • A personalized system prompt is dynamically created from Mukilan’s resume data, incorporating details such as education, experience, projects, and skills.
