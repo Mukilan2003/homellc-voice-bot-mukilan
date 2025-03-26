@@ -5,10 +5,12 @@
 
 A personalized AI chatbot that simulates conversations with Mukilan using natural language processing and voice capabilities. Talk to an AI version of Mukilan anytime, anywhere—no scheduling, no delays.
 
-## Live Demo
+---
 
-<p align="center">
-  <a href="https://homellc-voice-bot-mukilan.onrender.com/" style="text-decoration: none;">
+## 🚀 Live Demo
+
+<p>
+  <a href="https://homellc-voice-bot-mukilan.onrender.com" target="_blank">
     <button style="
       background-color: #6a0dad;
       border: none;
@@ -20,14 +22,29 @@ A personalized AI chatbot that simulates conversations with Mukilan using natura
       font-size: 16px;
       margin: 4px 2px;
       cursor: pointer;
-      border-radius: 12px;
-    ">
+      border-radius: 12px;">
       Try Live Demo
     </button>
   </a>
 </p>
 
-You can access the live demo of Mukilan's AI Assistant by clicking the button above or by visiting the following link: [https://homellc-voice-bot-mukilan.onrender.com/](https://homellc-voice-bot-mukilan.onrender.com/)
+You can access the live demo of Mukilan's AI Assistant by clicking the button above or by visiting the following link: [https://homellc-voice-bot-mukilan.onrender.com](https://homellc-voice-bot-mukilan.onrender.com)
+
+---
+
+## 📥 Installation
+
+### Prerequisites
+
+- Ensure Python 3.8 or later is installed.
+- Verify that you have an active internet connection for API access.
+- Use a modern web browser such as Chrome, Firefox, Safari, or Edge.
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Mukilan2003/homellc-voice-bot-mukilan.git
+cd homellc-voice-bot-mukilan
 
 ## Features
 
