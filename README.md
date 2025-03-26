@@ -1,5 +1,5 @@
 ![Banner Image](banner.png)
-![Build Status](https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg)
+
 
 # Mukilan's AI Assistant
 
